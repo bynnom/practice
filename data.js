@@ -369,6 +369,20 @@ window.seedKnowledge = [
     "priority": "high"
   },
   {
+    "id": "count-characters-hello-vikki",
+    "category": "Automation",
+    "question": "Với chuỗi \"hello vikki\", viết script count từng chữ như thế nào?",
+    "answer": "Có thể dùng object để lưu số lần xuất hiện của từng ký tự:\n\nconst text = \"hello vikki\";\nconst counts = {};\n\nfor (const char of text.replaceAll(\" \", \"\").toLowerCase()) {\n  counts[char] = (counts[char] || 0) + 1;\n}\n\nconsole.log(counts);\n// { h: 1, e: 1, l: 2, o: 1, v: 1, i: 2, k: 2 }\n\n- replaceAll(\" \", \"\") dùng để bỏ khoảng trắng vì chỉ count chữ cái.\n- toLowerCase() giúp gom chữ hoa/chữ thường về cùng một key.\n- Nếu cần count cả khoảng trắng thì bỏ đoạn replaceAll(\" \", \"\").",
+    "priority": "high"
+  },
+  {
+    "id": "even-odd-without-if-else",
+    "category": "Automation",
+    "question": "Cách check một số là chẵn hay lẻ mà không dùng if else?",
+    "answer": "Dùng toán tử chia lấy dư %. Số chia hết cho 2 là số chẵn:\n\nconst number = 7;\nconst result = number % 2 === 0 ? \"Chẵn\" : \"Lẻ\";\nconsole.log(result); // Lẻ\n\nNếu không dùng cả toán tử điều kiện ?:, có thể map kết quả dư vào array:\n\nconst number = 8;\nconst result = [\"Chẵn\", \"Lẻ\"][Math.abs(number % 2)];\nconsole.log(result); // Chẵn\n\n- Math.abs() giúp cách dùng array vẫn đúng với số nguyên âm, ví dụ -3 là lẻ.",
+    "priority": "high"
+  },
+  {
     "id": "c7838c2f-1c9d-45c7-b210-86927eabaf78",
     "category": "HR",
     "question": "Có câu hỏi gì cho công ty không",
