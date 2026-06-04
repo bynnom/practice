@@ -3,142 +3,52 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>QC Interview Study Hub</title>
-    <link rel="icon" href="data:," />
-    <link rel="stylesheet" href="styles.css?v=3" />
+    <title>Bynnom</title>
+    <link rel="icon" href="assets/images/logo.png" />
+    <link rel="stylesheet" href="assets/styles/main.css?v=5" />
   </head>
-  <body>
-    <aside class="sidebar">
-      <div class="brand">
-        <span class="brand-mark">QC</span>
-        <div>
-          <h1>Study Hub</h1>
-          <p>Ôn phỏng vấn QA/QC</p>
-        </div>
-      </div>
-      <nav id="categoryNav" class="nav"></nav>
-    </aside>
+  <body class="home-page">
+    <header class="home-nav">
+      <a class="home-brand" href="index.html" aria-label="Bynnom home">
+        <img class="brand-logo" src="assets/images/logo.png" alt="Bynnom logo" />
+        <span>Bynnom</span>
+      </a>
+      <nav class="home-nav-actions" aria-label="Main navigation">
+        <a id="studyHubAccessLink" class="site-nav-link" href="pages/study-hub.html">StudyHub</a>
+        <a class="site-nav-link" href="pages/templates.html">QA Templates</a>
+      </nav>
+    </header>
 
-    <main class="app-shell">
-      <header class="topbar">
-        <div>
-          <p class="eyebrow">Local knowledge base</p>
-          <h2 id="pageTitle">Tất cả kiến thức</h2>
-        </div>
-        <div class="search-wrap">
-          <input id="searchInput" type="search" placeholder="Tìm: API, POM, salary, Scrum..." />
-        </div>
-      </header>
-
-      <section class="stats-grid" aria-label="Tổng quan ôn tập">
-        <article>
-          <strong id="totalCards">0</strong>
-          <span>mục kiến thức</span>
-        </article>
-        <article>
-          <strong id="doneCards">0</strong>
-          <span>đã tự tin</span>
-        </article>
-        <article>
-          <strong id="reviewCards">0</strong>
-          <span>cần ôn lại</span>
-        </article>
-      </section>
-
-      <section class="toolbar" aria-label="Bộ lọc và chế độ học">
-        <div class="segmented">
-          <button class="mode-btn active" data-mode="notes">Ghi chú</button>
-          <button class="mode-btn" data-mode="flashcards">Flashcard</button>
-          <button class="mode-btn" data-mode="quiz">Quiz</button>
-          <button class="mode-btn" data-mode="editor">Thêm kiến thức</button>
-        </div>
-        <select id="confidenceFilter" aria-label="Lọc theo trạng thái">
-          <option value="all">Tất cả trạng thái</option>
-          <option value="new">Chưa ôn</option>
-          <option value="review">Cần ôn lại</option>
-          <option value="done">Đã tự tin</option>
-        </select>
-      </section>
-
-      <section id="notesView" class="content-grid"></section>
-
-      <section id="flashcardView" class="study-view hidden">
-        <div class="flashcard">
-          <div class="flashcard-head">
-            <span id="flashCategory"></span>
-            <span id="flashCounter"></span>
-          </div>
-          <h3 id="flashQuestion"></h3>
-          <div id="flashAnswer" class="answer-body hidden"></div>
-          <div class="actions">
-            <button id="prevFlash" class="secondary-btn">Trước</button>
-            <button id="toggleAnswer" class="primary-btn">Hiện đáp án</button>
-            <button id="nextFlash" class="secondary-btn">Tiếp</button>
-          </div>
-        </div>
-      </section>
-
-      <section id="quizView" class="study-view hidden">
-        <div class="quiz-panel">
-          <div class="quiz-head">
-            <div>
-              <p class="eyebrow">Quick recall</p>
-              <h3 id="quizQuestion"></h3>
-            </div>
-            <strong id="quizScore">0/0</strong>
-          </div>
-          <textarea id="quizAnswer" placeholder="Tự trả lời ngắn gọn trước, sau đó bấm so sánh..."></textarea>
-          <details>
-            <summary>So sánh với gợi ý trả lời</summary>
-            <div id="quizExpected" class="answer-body"></div>
-          </details>
-          <div class="actions">
-            <button id="markReviewQuiz" class="secondary-btn">Cần ôn lại</button>
-            <button id="markDoneQuiz" class="primary-btn">Đã nắm</button>
-          </div>
-        </div>
-      </section>
-
-      <section id="editorView" class="editor-view hidden">
-        <form id="knowledgeForm">
-          <div id="editBanner" class="edit-banner hidden">
-            <span>Đang sửa một mục kiến thức</span>
-            <button id="cancelEditBtn" type="button">Hủy sửa</button>
-          </div>
-          <div class="form-row">
-            <label>
-              Nhóm kiến thức
-              <input id="itemCategory" required placeholder="VD: API, Automation, HR" />
-            </label>
-            <label>
-              Mức ưu tiên
-              <select id="itemPriority">
-                <option value="high">Cao</option>
-                <option value="medium">Vừa</option>
-                <option value="low">Thấp</option>
-              </select>
-            </label>
-          </div>
-          <label>
-            Câu hỏi / chủ đề
-            <input id="itemQuestion" required placeholder="VD: Page Object Model là gì?" />
-          </label>
-          <label>
-            Câu trả lời / ghi chú
-            <textarea id="itemAnswer" required placeholder="- Ý chính thứ nhất&#10;- Ý chính thứ hai&#10;1. Bước một&#10;2. Bước hai"></textarea>
-          </label>
-          <button id="saveItemBtn" class="primary-btn" type="submit">Lưu kiến thức</button>
-        </form>
-        <div class="paste-panel">
-          <h3>Nhập nhanh từ Google Doc</h3>
-          <p>Dán thêm ghi chú mới vào đây. Mỗi tiêu đề ngắn sẽ thành một mục, đoạn bên dưới là nội dung.</p>
-          <textarea id="bulkInput" placeholder="Dán nội dung mới..."></textarea>
-          <button id="bulkImportBtn" class="secondary-btn">Tách và lưu</button>
-        </div>
+    <main class="home-placeholder" aria-label="Upcoming content">
+      <section class="coming-soon-panel">
+        <span>Coming soon</span>
+        <h1>Workspace content is being prepared.</h1>
+        <p>New Bynnom workspace areas will be available here soon.</p>
       </section>
     </main>
 
-    <script src="data.js?v=3"></script>
-    <script src="app.js?v=3"></script>
+    <dialog id="studyHubLoginDialog" class="auth-dialog">
+      <form id="studyHubLoginForm" class="auth-card" method="dialog">
+        <div>
+          <p class="auth-kicker">Private access</p>
+          <h2>StudyHub login</h2>
+        </div>
+        <label>
+          Username
+          <input id="studyHubUsername" autocomplete="username" required />
+        </label>
+        <label>
+          Password
+          <input id="studyHubPassword" autocomplete="current-password" required type="password" />
+        </label>
+        <p id="studyHubLoginError" class="auth-error" role="alert"></p>
+        <div class="auth-actions">
+          <button id="studyHubLoginCancel" class="secondary-btn" type="button">Cancel</button>
+          <button class="primary-btn" type="submit">Continue</button>
+        </div>
+      </form>
+    </dialog>
+
+    <script src="assets/scripts/auth.js?v=1"></script>
   </body>
 </html>
