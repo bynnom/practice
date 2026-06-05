@@ -13,7 +13,7 @@ function grantStudyHubAccess() {
 function guardStudyHubPage() {
   if (!document.body.dataset.protectedPage) return;
   if (hasStudyHubAccess()) return;
-  window.location.replace("../index.html");
+  window.location.replace("./");
 }
 
 function setupStudyHubLogin() {
