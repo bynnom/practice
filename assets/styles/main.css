@@ -240,12 +240,14 @@ button {
 .templates-page {
   min-height: 100vh;
   padding: 24px clamp(18px, 5vw, 64px);
-  background: var(--bg);
+  background:
+    radial-gradient(circle at top left, rgba(15, 139, 111, 0.2), transparent 34%),
+    #07110e;
+  color: #f9fffc;
 }
 
 .templates-topbar,
 .templates-shell {
-  max-width: 1180px;
   margin: 0 auto;
 }
 
@@ -254,6 +256,12 @@ button {
   align-items: center;
   justify-content: space-between;
   gap: 18px;
+  max-width: 1240px;
+  padding: 8px 0;
+}
+
+.templates-shell {
+  max-width: 1180px;
 }
 
 .templates-shell {
@@ -274,14 +282,34 @@ button {
 
 .templates-head h1 {
   margin-top: 8px;
+  color: #f9fffc;
   font-size: clamp(34px, 5vw, 58px);
   line-height: 1.05;
 }
 
 .templates-head p {
   margin-top: 12px;
-  color: var(--muted);
+  color: rgba(249, 255, 252, 0.58);
   line-height: 1.7;
+}
+
+.templates-page .eyebrow,
+.templates-page .template-library span {
+  color: #62d7b1;
+}
+
+.templates-page .template-library article {
+  border-color: rgba(98, 215, 177, 0.16);
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.16);
+}
+
+.templates-page .template-library h2 {
+  color: #f9fffc;
+}
+
+.templates-page .template-library p {
+  color: rgba(249, 255, 252, 0.58);
 }
 
 .template-library {
