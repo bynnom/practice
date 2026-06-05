@@ -1,5 +1,5 @@
 const STUDY_HUB_AUTH_KEY = "bynnom-studyhub-auth";
-const STUDY_HUB_USERNAME = "thieulamvy";
+const STUDY_HUB_USERNAME = "thieulvy";
 const STUDY_HUB_PASSWORD = "150601";
 
 function hasStudyHubAccess() {
@@ -13,7 +13,7 @@ function grantStudyHubAccess() {
 function guardStudyHubPage() {
   if (!document.body.dataset.protectedPage) return;
   if (hasStudyHubAccess()) return;
-  window.location.replace("./");
+  window.location.replace("../");
 }
 
 function setupStudyHubLogin() {
@@ -33,15 +33,19 @@ function setupStudyHubLogin() {
     form.reset();
     errorText.textContent = "";
     dialog.showModal();
-    usernameInput.focus();
+    dialog.focus({ preventScroll: true });
   });
 
   cancelButton.addEventListener("click", () => {
+    document.activeElement?.blur();
     dialog.close();
   });
 
   dialog.addEventListener("click", (event) => {
-    if (event.target === dialog) dialog.close();
+    if (event.target === dialog) {
+      document.activeElement?.blur();
+      dialog.close();
+    }
   });
 
   form.addEventListener("submit", (event) => {

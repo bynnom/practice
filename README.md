@@ -9,7 +9,8 @@ Web local cho QA workspace, gồm trang home, QA Templates và Study Hub để �
 ├── index.html
 ├── qa-templates
 │   └── index.html
-├── studyhub.html
+├── study-hub
+│   └── index.html
 ├── assets
 │   ├── data
 │   │   └── knowledge.js
@@ -38,9 +39,9 @@ Các trang chính:
 
 - Home: `http://localhost:5173/`
 - QA Templates: `http://localhost:5173/qa-templates/`
-- StudyHub: `http://localhost:5173/studyhub.html`
+- Study Hub: `http://localhost:5173/study-hub/`
 
-StudyHub yêu cầu đăng nhập từ home trước khi truy cập.
+Study Hub yêu cầu đăng nhập từ home trước khi truy cập.
 
 ## Tính năng
 
