@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bynnom | QA Templates</title>
     <link rel="icon" href="../assets/images/logo.png" />
-    <link rel="stylesheet" href="../assets/styles/main.css?v=5" />
+    <link rel="stylesheet" href="../assets/styles/main.css?v=12" />
   </head>
   <body class="templates-page">
-    <header class="templates-topbar">
+    <header class="home-nav">
       <a class="home-brand" href="../" aria-label="Bynnom home">
         <img class="brand-logo" src="../assets/images/logo.png" alt="Bynnom logo" />
         <span>Bynnom</span>
       </a>
       <nav class="home-nav-actions" aria-label="Main navigation">
-        <a class="site-nav-link" href="../study-hub/">Study Hub</a>
+        <a id="studyHubAccessLink" class="site-nav-link" href="../study-hub/">Study Hub</a>
         <a class="site-nav-link" href="./" aria-current="page">QA Templates</a>
       </nav>
     </header>
@@ -59,5 +59,30 @@
         </article>
       </div>
     </main>
+
+    <dialog id="studyHubLoginDialog" class="auth-dialog" tabindex="-1">
+      <form id="studyHubLoginForm" class="auth-card" method="dialog">
+        <div>
+          <p class="auth-kicker">Private access</p>
+          <h2>Study Hub login</h2>
+        </div>
+        <label>
+          Username
+          <input id="studyHubUsername" autocomplete="username" required />
+        </label>
+        <label>
+          Password
+          <input id="studyHubPassword" autocomplete="current-password" required type="password" />
+        </label>
+        <p id="studyHubLoginError" class="auth-error" role="alert"></p>
+        <div class="auth-actions">
+          <button id="studyHubLoginCancel" class="secondary-btn" type="button">Cancel</button>
+          <button class="primary-btn" type="submit">Continue</button>
+        </div>
+      </form>
+    </dialog>
+
+    <script src="../assets/scripts/auth.js?v=2"></script>
+    <script src="../assets/scripts/back-to-top.js?v=1"></script>
   </body>
 </html>
