@@ -107,7 +107,16 @@ button {
   color: #c3f3df;
 }
 
+.site-nav-link[aria-current="page"] {
+  color: #f9fffc;
+}
+
 .site-nav-link:hover::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.site-nav-link[aria-current="page"]::after {
   opacity: 1;
   transform: scaleX(1);
 }
@@ -370,12 +379,6 @@ button {
   object-fit: cover;
   padding: 4px;
   box-shadow: 0 10px 24px rgba(23, 33, 29, 0.16);
-}
-
-.sidebar-logo {
-  width: 56px;
-  height: 56px;
-  flex: 0 0 auto;
 }
 
 .brand h1,
@@ -804,6 +807,168 @@ label {
   text-align: center;
 }
 
+.study-hub-page {
+  --workspace-rail: max(clamp(18px, 5vw, 64px), calc((100vw - 1240px) / 2));
+  background:
+    radial-gradient(circle at top left, rgba(15, 139, 111, 0.2), transparent 34%),
+    #07110e;
+  color: #f9fffc;
+}
+
+.study-hub-page .sidebar {
+  width: calc(var(--workspace-rail) + 260px);
+  padding: 32px 22px 24px var(--workspace-rail);
+  background: #07110e;
+  border-right: 1px solid rgba(98, 215, 177, 0.12);
+}
+
+.study-hub-page .app-shell {
+  margin-left: calc(var(--workspace-rail) + 260px);
+}
+
+.study-hub-page .brand {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.study-hub-page .sidebar-main-nav {
+  align-self: stretch;
+  gap: 18px;
+  padding-bottom: 16px;
+  padding-left: 0;
+  border-bottom: 1px solid rgba(98, 215, 177, 0.16);
+}
+
+.study-hub-page .sidebar-main-nav::before {
+  display: none;
+}
+
+.study-hub-page .brand span,
+.study-hub-page .topbar h2,
+.study-hub-page .note-card h3,
+.study-hub-page .flashcard h3,
+.study-hub-page .quiz-panel h3,
+.study-hub-page .paste-panel h3 {
+  color: #f9fffc;
+}
+
+.study-hub-page .brand:hover span {
+  color: #c3f3df;
+}
+
+.study-hub-page .nav button {
+  color: rgba(249, 255, 252, 0.78);
+}
+
+.study-hub-page .nav button:hover,
+.study-hub-page .nav button.active {
+  background: rgba(98, 215, 177, 0.1);
+  border-color: rgba(98, 215, 177, 0.18);
+  color: #f9fffc;
+}
+
+.study-hub-page .nav strong,
+.study-hub-page .eyebrow {
+  color: #62d7b1;
+}
+
+.study-hub-page .stats-grid article,
+.study-hub-page .note-card,
+.study-hub-page .flashcard,
+.study-hub-page .quiz-panel,
+.study-hub-page .editor-view form,
+.study-hub-page .paste-panel,
+.study-hub-page .empty-state {
+  border-color: rgba(98, 215, 177, 0.16);
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.16);
+}
+
+.study-hub-page .search-wrap input,
+.study-hub-page select,
+.study-hub-page form input,
+.study-hub-page textarea {
+  border-color: rgba(98, 215, 177, 0.16);
+  background: rgba(255, 255, 255, 0.055);
+  color: #f9fffc;
+}
+
+.study-hub-page input::placeholder,
+.study-hub-page textarea::placeholder {
+  color: rgba(249, 255, 252, 0.38);
+}
+
+.study-hub-page .stats-grid span,
+.study-hub-page .card-meta span,
+.study-hub-page .flashcard-head span,
+.study-hub-page label,
+.study-hub-page .mode-btn,
+.study-hub-page .empty-state {
+  color: rgba(249, 255, 252, 0.58);
+}
+
+.study-hub-page .note-card p,
+.study-hub-page .answer-body,
+.study-hub-page .quiz-panel p,
+.study-hub-page .paste-panel p {
+  color: rgba(249, 255, 252, 0.72);
+}
+
+.study-hub-page .segmented {
+  border-color: rgba(98, 215, 177, 0.16);
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.study-hub-page .mode-btn.active {
+  background: rgba(98, 215, 177, 0.13);
+  color: #f9fffc;
+  box-shadow: none;
+}
+
+.study-hub-page .secondary-btn,
+.study-hub-page .card-actions button,
+.study-hub-page .edit-banner button {
+  border-color: rgba(98, 215, 177, 0.16);
+  background: rgba(255, 255, 255, 0.06);
+  color: #f9fffc;
+}
+
+.study-hub-page .primary-btn,
+.study-hub-page .card-actions button.selected {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.study-hub-page .primary-btn:hover {
+  background: var(--accent-dark);
+}
+
+.study-hub-page .card-actions button[data-action="delete"] {
+  color: #ffb4ab;
+}
+
+.study-hub-page .note-card.review {
+  border-color: rgba(183, 110, 0, 0.55);
+}
+
+.study-hub-page .note-card.done {
+  border-color: rgba(98, 215, 177, 0.45);
+}
+
+.study-hub-page .edit-banner {
+  border-color: rgba(98, 215, 177, 0.22);
+  background: rgba(98, 215, 177, 0.08);
+  color: #c3f3df;
+}
+
+.study-hub-page .quiz-head strong,
+.study-hub-page details {
+  border-color: rgba(98, 215, 177, 0.16);
+  background: rgba(255, 255, 255, 0.045);
+  color: #f9fffc;
+}
+
 .hidden {
   display: none !important;
 }
@@ -822,6 +987,14 @@ label {
   .app-shell {
     margin-left: 0;
     padding: 18px;
+  }
+
+  .study-hub-page .sidebar {
+    width: auto;
+  }
+
+  .study-hub-page .app-shell {
+    margin-left: 0;
   }
 
   .topbar,
@@ -847,6 +1020,14 @@ label {
   .home-page,
   .templates-page {
     padding: 18px;
+  }
+
+  .study-hub-page {
+    --workspace-rail: 18px;
+  }
+
+  .study-hub-page .sidebar {
+    padding: 26px 18px 24px var(--workspace-rail);
   }
 
   .templates-topbar {

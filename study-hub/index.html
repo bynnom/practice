@@ -8,14 +8,16 @@
     <link rel="stylesheet" href="../assets/styles/main.css?v=5" />
     <script src="../assets/scripts/auth.js?v=1" defer></script>
   </head>
-  <body data-protected-page="study-hub">
+  <body class="study-hub-page" data-protected-page="study-hub">
     <aside class="sidebar">
-      <a class="brand" href="../" aria-label="Bynnom home">
-        <img class="brand-logo sidebar-logo" src="../assets/images/logo.png" alt="Study Hub logo" />
-        <div>
-          <h1>Bynnom</h1>
-        </div>
+      <a class="brand home-brand" href="../" aria-label="Bynnom home">
+        <img class="brand-logo" src="../assets/images/logo.png" alt="Bynnom logo" />
+        <span>Bynnom</span>
       </a>
+      <nav class="home-nav-actions sidebar-main-nav" aria-label="Main navigation">
+        <a class="site-nav-link" href="./" aria-current="page">Study Hub</a>
+        <a class="site-nav-link" href="../qa-templates/">QA Templates</a>
+      </nav>
       <nav id="categoryNav" class="nav"></nav>
     </aside>
 
