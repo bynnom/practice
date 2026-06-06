@@ -19,6 +19,8 @@
 }
 
 body {
+  --page-x: clamp(18px, 5vw, 64px);
+  --workspace-bg: #07110e;
   margin: 0;
   min-height: 100vh;
   background: var(--bg);
@@ -39,10 +41,8 @@ button {
 
 .home-page {
   min-height: 100vh;
-  padding: 24px clamp(18px, 5vw, 64px);
-  background:
-    radial-gradient(circle at top left, rgba(15, 139, 111, 0.24), transparent 34%),
-    #07110e;
+  padding: 24px var(--page-x);
+  background: var(--workspace-bg);
   color: #f9fffc;
 }
 
@@ -107,7 +107,16 @@ button {
   color: #c3f3df;
 }
 
+.site-nav-link[aria-current="page"] {
+  color: #f9fffc;
+}
+
 .site-nav-link:hover::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.site-nav-link[aria-current="page"]::after {
   opacity: 1;
   transform: scaleX(1);
 }
@@ -241,10 +250,8 @@ button {
 
 .templates-page {
   min-height: 100vh;
-  padding: 24px clamp(18px, 5vw, 64px);
-  background:
-    radial-gradient(circle at top left, rgba(15, 139, 111, 0.2), transparent 34%),
-    #07110e;
+  padding: 24px var(--page-x);
+  background: var(--workspace-bg);
   color: #f9fffc;
 }
 
@@ -370,12 +377,6 @@ button {
   object-fit: cover;
   padding: 4px;
   box-shadow: 0 10px 24px rgba(23, 33, 29, 0.16);
-}
-
-.sidebar-logo {
-  width: 56px;
-  height: 56px;
-  flex: 0 0 auto;
 }
 
 .brand h1,
@@ -804,6 +805,199 @@ label {
   text-align: center;
 }
 
+.study-hub-page {
+  --workspace-rail: max(var(--page-x), calc((100vw - 1240px) / 2));
+  min-height: 100vh;
+  padding: 24px var(--page-x);
+  background: var(--workspace-bg);
+  color: #f9fffc;
+}
+
+.study-hub-page .home-nav {
+  margin-bottom: 24px;
+}
+
+.study-hub-page .sidebar {
+  inset: 116px auto 0 var(--workspace-rail);
+  width: 260px;
+  padding: 0 22px 24px 0;
+  background: transparent;
+  border-right: 1px solid rgba(98, 215, 177, 0.12);
+}
+
+.study-hub-page .app-shell {
+  max-width: calc(1240px - 292px);
+  margin-left: calc(var(--workspace-rail) + 292px - var(--page-x));
+  padding: 0 0 28px 28px;
+}
+
+.study-hub-page .topbar {
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(98, 215, 177, 0.12);
+}
+
+.study-hub-page .topbar h2,
+.study-hub-page .note-card h3,
+.study-hub-page .flashcard h3,
+.study-hub-page .quiz-panel h3,
+.study-hub-page .paste-panel h3 {
+  color: #f9fffc;
+}
+
+.study-hub-page .nav button {
+  border-color: rgba(98, 215, 177, 0.16);
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(249, 255, 252, 0.78);
+}
+
+.study-hub-page .nav button:hover,
+.study-hub-page .nav button.active {
+  border-color: rgba(98, 215, 177, 0.16);
+  background: rgba(255, 255, 255, 0.04);
+  color: #f9fffc;
+}
+
+.study-hub-page .nav strong,
+.study-hub-page .eyebrow {
+  color: #62d7b1;
+}
+
+.study-hub-page .stats-grid article,
+.study-hub-page .note-card,
+.study-hub-page .flashcard,
+.study-hub-page .quiz-panel,
+.study-hub-page .editor-view form,
+.study-hub-page .paste-panel,
+.study-hub-page .empty-state {
+  border-color: rgba(98, 215, 177, 0.16);
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.16);
+}
+
+.study-hub-page .search-wrap input,
+.study-hub-page select,
+.study-hub-page form input,
+.study-hub-page textarea {
+  border-color: rgba(98, 215, 177, 0.16);
+  background: rgba(255, 255, 255, 0.04);
+  color: #f9fffc;
+}
+
+.study-hub-page input::placeholder,
+.study-hub-page textarea::placeholder {
+  color: rgba(249, 255, 252, 0.38);
+}
+
+.study-hub-page .stats-grid span,
+.study-hub-page .card-meta span,
+.study-hub-page .flashcard-head span,
+.study-hub-page label,
+.study-hub-page .mode-btn,
+.study-hub-page .empty-state {
+  color: rgba(249, 255, 252, 0.58);
+}
+
+.study-hub-page .note-card p,
+.study-hub-page .answer-body,
+.study-hub-page .quiz-panel p,
+.study-hub-page .paste-panel p {
+  color: rgba(249, 255, 252, 0.72);
+}
+
+.study-hub-page .segmented {
+  border-color: rgba(98, 215, 177, 0.16);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.study-hub-page .mode-btn.active {
+  background: rgba(98, 215, 177, 0.1);
+  color: #f9fffc;
+  box-shadow: none;
+}
+
+.study-hub-page .secondary-btn,
+.study-hub-page .card-actions button,
+.study-hub-page .edit-banner button {
+  border-color: rgba(98, 215, 177, 0.16);
+  background: rgba(255, 255, 255, 0.04);
+  color: #f9fffc;
+}
+
+.study-hub-page .primary-btn,
+.study-hub-page .card-actions button.selected {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.study-hub-page .primary-btn:hover {
+  background: var(--accent-dark);
+}
+
+.study-hub-page .card-actions button[data-action="delete"] {
+  color: #ffb4ab;
+}
+
+.study-hub-page .note-card.review {
+  border-color: rgba(183, 110, 0, 0.55);
+}
+
+.study-hub-page .note-card.done {
+  border-color: rgba(98, 215, 177, 0.45);
+}
+
+.study-hub-page .edit-banner {
+  border-color: rgba(98, 215, 177, 0.22);
+  background: rgba(98, 215, 177, 0.08);
+  color: #c3f3df;
+}
+
+.study-hub-page .quiz-head strong,
+.study-hub-page details {
+  border-color: rgba(98, 215, 177, 0.16);
+  background: rgba(255, 255, 255, 0.03);
+  color: #f9fffc;
+}
+
+.back-to-top {
+  position: fixed;
+  right: clamp(18px, 4vw, 42px);
+  bottom: clamp(18px, 4vw, 36px);
+  z-index: 30;
+  display: grid;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  border: 1px solid rgba(98, 215, 177, 0.22);
+  border-radius: 50%;
+  background: rgba(11, 24, 20, 0.92);
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.28);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.back-to-top::before {
+  width: 11px;
+  height: 11px;
+  border-top: 3px solid #62d7b1;
+  border-left: 3px solid #62d7b1;
+  content: "";
+  transform: translateY(3px) rotate(45deg);
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  border-color: rgba(98, 215, 177, 0.42);
+  background: #0f231d;
+}
+
 .hidden {
   display: none !important;
 }
@@ -822,6 +1016,18 @@ label {
   .app-shell {
     margin-left: 0;
     padding: 18px;
+  }
+
+  .study-hub-page .sidebar {
+    position: static;
+    width: auto;
+    padding: 0 0 18px;
+    border-right: 0;
+  }
+
+  .study-hub-page .app-shell {
+    margin-left: 0;
+    padding: 0;
   }
 
   .topbar,
@@ -845,7 +1051,8 @@ label {
 
 @media (max-width: 560px) {
   .home-page,
-  .templates-page {
+  .templates-page,
+  .study-hub-page {
     padding: 18px;
   }
 

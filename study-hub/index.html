@@ -5,17 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bynnom | Study Hub</title>
     <link rel="icon" href="../assets/images/logo.png" />
-    <link rel="stylesheet" href="../assets/styles/main.css?v=5" />
-    <script src="../assets/scripts/auth.js?v=1" defer></script>
+    <link rel="stylesheet" href="../assets/styles/main.css?v=12" />
+    <script src="../assets/scripts/auth.js?v=2" defer></script>
+    <script src="../assets/scripts/back-to-top.js?v=1" defer></script>
   </head>
-  <body data-protected-page="study-hub">
-    <aside class="sidebar">
-      <a class="brand" href="../" aria-label="Bynnom home">
-        <img class="brand-logo sidebar-logo" src="../assets/images/logo.png" alt="Study Hub logo" />
-        <div>
-          <h1>Bynnom</h1>
-        </div>
+  <body class="study-hub-page" data-protected-page="study-hub">
+    <header class="home-nav">
+      <a class="home-brand" href="../" aria-label="Bynnom home">
+        <img class="brand-logo" src="../assets/images/logo.png" alt="Bynnom logo" />
+        <span>Bynnom</span>
       </a>
+      <nav class="home-nav-actions" aria-label="Main navigation">
+        <a class="site-nav-link" href="./" aria-current="page">Study Hub</a>
+        <a class="site-nav-link" href="../qa-templates/">QA Templates</a>
+      </nav>
+    </header>
+
+    <aside class="sidebar">
       <nav id="categoryNav" class="nav"></nav>
     </aside>
 
