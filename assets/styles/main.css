@@ -1056,6 +1056,14 @@ label {
     padding: 18px;
   }
 
+  .study-hub-page {
+    --workspace-rail: 18px;
+  }
+
+  .study-hub-page .sidebar {
+    padding: 26px 18px 24px var(--workspace-rail);
+  }
+
   .templates-topbar {
     align-items: stretch;
     flex-direction: column;
