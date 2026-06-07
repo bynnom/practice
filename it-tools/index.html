@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bynnom | IT Tools</title>
+    <link rel="icon" href="../assets/images/logo.png" />
+    <link rel="stylesheet" href="../assets/styles/main.css?v=43" />
+  </head>
+  <body class="tools-page">
+    <header class="home-nav">
+      <a class="home-brand" href="../" aria-label="Bynnom home">
+        <img class="brand-logo" src="../assets/images/logo.png" alt="Bynnom logo" />
+        <span>Bynnom</span>
+      </a>
+      <nav class="home-nav-actions" aria-label="Main navigation">
+        <a id="studyHubAccessLink" class="site-nav-link" href="../study-hub/">Study Hub</a>
+        <a class="site-nav-link" href="../qa-templates/">QA Templates</a>
+        <a class="site-nav-link" href="./" aria-current="page">IT Tools</a>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Switch to light mode" aria-pressed="false">
+        <span class="theme-toggle-icon" aria-hidden="true"></span>
+        <span class="theme-toggle-label">Dark</span>
+      </button>
+    </header>
+
+    <main class="tools-shell">
+      <section class="tools-workspace" aria-label="IT tools workspace">
+        <aside class="tools-menu" aria-label="Tool options">
+          <button class="tool-option active" type="button" data-tool-target="text-generator" aria-current="true">
+            <strong>Text Generator</strong>
+          </button>
+          <button class="tool-option" type="button" data-tool-target="text-diff" aria-current="false">
+            <strong>Text Diff</strong>
+          </button>
+        </aside>
+
+        <section id="text-generator" class="tool-panel" aria-label="Text Generator">
+          <div class="tool-panel-head">
+            <div>
+              <p class="eyebrow">Text Generator</p>
+              <h2>Lorem ipsum generator</h2>
+              <p class="tool-description">
+                Generate placeholder text for layouts, mockups, and test content.
+              </p>
+            </div>
+          </div>
+
+          <form id="textGeneratorForm" class="tool-form">
+            <div class="tool-form-row">
+              <label>
+                Paragraphs
+                <input id="paragraphCount" type="number" min="1" max="20" value="3" />
+              </label>
+              <label>
+                Sentences per paragraph
+                <input id="sentencesPerParagraph" type="number" min="1" max="12" value="4" />
+              </label>
+              <label>
+                Words per sentence
+                <input id="wordsPerSentence" type="number" min="4" max="24" value="10" />
+              </label>
+            </div>
+
+            <div class="tool-actions">
+              <button id="textGeneratorRefresh" class="primary-btn" type="submit">Refresh</button>
+              <button id="textGeneratorCopy" class="secondary-btn" type="button">Copy</button>
+            </div>
+          </form>
+
+          <section class="tool-output" aria-label="Generated text">
+            <div class="tool-output-head">
+              <h3>Output</h3>
+            </div>
+            <textarea id="textGeneratorOutput" rows="12" aria-label="Generated text"></textarea>
+          </section>
+        </section>
+
+        <section id="text-diff" class="tool-panel" aria-label="Text Diff" hidden>
+          <div class="tool-panel-head">
+            <div>
+              <p class="eyebrow">Text Diff</p>
+              <h2>Compare two texts</h2>
+              <p class="tool-description">
+                Paste two versions of text and highlight changed lines.
+              </p>
+            </div>
+          </div>
+
+          <div class="tool-form">
+            <div class="diff-input-grid">
+              <label>
+                Original text
+                <div
+                  id="originalText"
+                  class="diff-editor"
+                  contenteditable="true"
+                  spellcheck="false"
+                  role="textbox"
+                  aria-multiline="true"
+                  data-placeholder="Paste the original text here..."
+                ></div>
+              </label>
+              <label>
+                Changed text
+                <div
+                  id="changedText"
+                  class="diff-editor"
+                  contenteditable="true"
+                  spellcheck="false"
+                  role="textbox"
+                  aria-multiline="true"
+                  data-placeholder="Paste the changed text here..."
+                ></div>
+              </label>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <dialog id="studyHubLoginDialog" class="auth-dialog" tabindex="-1">
+      <form id="studyHubLoginForm" class="auth-card" method="dialog">
+        <div>
+          <p class="auth-kicker">Private access</p>
+          <h2>Study Hub login</h2>
+        </div>
+        <label>
+          Username
+          <input id="studyHubUsername" name="username" type="text" autocomplete="username" />
+        </label>
+        <label>
+          Password
+          <input id="studyHubPassword" name="password" type="password" autocomplete="current-password" />
+        </label>
+        <p id="studyHubLoginError" class="auth-error" role="alert"></p>
+        <div class="auth-actions">
+          <button id="studyHubLoginCancel" class="secondary-btn" type="button">Cancel</button>
+          <button class="primary-btn" type="submit">Continue</button>
+        </div>
+      </form>
+    </dialog>
+
+    <script src="../assets/scripts/auth.js?v=2"></script>
+    <script src="../assets/scripts/theme.js?v=1"></script>
+    <script src="../assets/scripts/text-generator.js?v=11"></script>
+  </body>
+</html>
