@@ -322,6 +322,7 @@ button {
 }
 
 .tools-shell {
+  max-width: min(100%, 1480px);
   padding-top: clamp(24px, 4vw, 42px);
 }
 
@@ -396,9 +397,9 @@ button {
 
 .tools-workspace {
   --tool-content-height: clamp(300px, 36vh, 380px);
-  --tool-panel-height: clamp(620px, 68vh, 700px);
+  --tool-panel-height: clamp(678px, 78vh, 720px);
   display: grid;
-  grid-template-columns: minmax(210px, 260px) minmax(0, 1fr);
+  grid-template-columns: minmax(190px, 230px) minmax(0, 1fr);
   gap: 18px;
   align-items: start;
 }
@@ -454,16 +455,14 @@ button {
 }
 
 .tool-panel {
-  min-height: var(--tool-panel-height);
+  height: var(--tool-panel-height);
+  min-height: 0;
+  overflow: hidden;
   padding: 22px;
 }
 
 .tool-panel[hidden] {
   display: none;
-}
-
-#text-diff {
-  min-height: 0;
 }
 
 .tool-panel-head,
@@ -509,6 +508,20 @@ button {
 .tool-form {
   display: grid;
   gap: 14px;
+}
+
+#text-diff {
+  display: flex;
+  flex-direction: column;
+}
+
+#text-diff[hidden] {
+  display: none;
+}
+
+#text-diff .tool-form {
+  flex: 1;
+  min-height: 0;
 }
 
 .tool-form label {
@@ -565,8 +578,15 @@ button {
   gap: 14px;
 }
 
+.diff-input-grid label {
+  min-height: 0;
+  overflow: hidden;
+}
+
 .diff-editor {
-  height: var(--tool-content-height);
+  height: calc(var(--tool-panel-height) - 180px);
+  max-height: calc(var(--tool-panel-height) - 180px);
+  min-height: 0;
   border: 1px solid rgba(98, 215, 177, 0.16);
   border-radius: var(--radius);
   background: rgba(255, 255, 255, 0.04);
