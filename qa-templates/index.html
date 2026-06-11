@@ -25,44 +25,55 @@
     </header>
 
     <main class="templates-shell">
-      <section class="templates-head">
-        <p class="eyebrow">Template library</p>
-        <h1>QA Template Library</h1>
-        <p>A structured collection for practical QA documents and checklists.</p>
-      </section>
+      <section class="tools-workspace template-workspace" aria-label="QA template workspace">
+        <aside class="tools-menu template-menu" aria-label="QA template options">
+          <a
+            class="tool-option active"
+            href="#release-confirmation-template"
+            data-template-target="release-confirmation-template"
+            aria-current="true"
+          >
+            <strong>Release Confirmation</strong>
+          </a>
+        </aside>
 
-      <div class="template-library">
-        <article>
-          <span>01</span>
-          <h2>Test Case Template</h2>
-          <p>Module, precondition, test data, steps, expected result, priority.</p>
-        </article>
-        <article>
-          <span>02</span>
-          <h2>Bug Report Template</h2>
-          <p>Summary, severity, environment, steps, actual, expected, attachment.</p>
-        </article>
-        <article>
-          <span>03</span>
-          <h2>Test Plan Template</h2>
-          <p>Scope, approach, risk, schedule, resource, entry/exit criteria.</p>
-        </article>
-        <article>
-          <span>04</span>
-          <h2>Regression Checklist</h2>
-          <p>Core flows, payment, permission, notification, compatibility, rollback.</p>
-        </article>
-        <article>
-          <span>05</span>
-          <h2>API Test Checklist</h2>
-          <p>Status code, schema, auth, validation, idempotency, error handling.</p>
-        </article>
-        <article>
-          <span>06</span>
-          <h2>UAT Script Template</h2>
-          <p>Business scenario, actor, input, expected outcome, sign-off status.</p>
-        </article>
-      </div>
+        <section class="tool-panel template-panel" aria-label="QA templates">
+          <div class="template-library">
+            <article id="release-confirmation-template" class="template-copy-card" data-template-panel>
+              <div class="template-copy-head">
+                <div>
+                  <h2>Release Confirmation</h2>
+                  <p>Copy this release verification summary when a release is ready to confirm.</p>
+                </div>
+                <button id="releaseConfirmationCopy" class="secondary-btn" type="button">Copy</button>
+              </div>
+              <textarea readonly aria-label="Release Confirmation template">Release Confirmation – vX.Y.Z (&lt;Environment&gt;)
+
+1. Verified Tickets (Re-confirm/Sanity Test)
+* &lt;Ticket ID + Title&gt; — Pass
+* &lt;Ticket ID + Title&gt; — Pass
+
+2. Test Result (Regression/Smoke Test)
+* Total: &lt;number&gt;
+* ✅ Passed: &lt;number&gt;
+* ❌ Failed: &lt;number&gt;
+* ⏭ Skipped: &lt;number&gt;
+
+3. Issues
+* N/A
+* &lt;Issue ID + Summary&gt;
+
+4. Status
+* ✅ Verification completed successfully.
+* ⚠️ Verification completed with known issues.
+* ❌ Verification failed due to critical/high severity issues.
+
+📎 Release Note: &lt;Link&gt;
+👥 cc: &lt;Team/Everyone&gt;</textarea>
+            </article>
+          </div>
+        </section>
+      </section>
     </main>
 
     <dialog id="studyHubLoginDialog" class="auth-dialog" tabindex="-1">
@@ -90,5 +101,6 @@
     <script src="../assets/scripts/auth.js"></script>
     <script src="../assets/scripts/back-to-top.js"></script>
     <script src="../assets/scripts/theme.js"></script>
+    <script src="../assets/scripts/templates.js"></script>
   </body>
 </html>
