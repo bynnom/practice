@@ -160,6 +160,60 @@ button {
   place-items: center;
 }
 
+.home-video-panel {
+  position: relative;
+  width: min(100%, 980px);
+  overflow: hidden;
+  padding: 10px;
+  border: 1px solid rgba(98, 215, 177, 0.18);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.035);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.18);
+}
+
+.home-video-panel video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  display: block;
+  border-radius: calc(var(--radius) - 4px);
+  object-fit: cover;
+}
+
+.home-video-copy {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: 18px;
+  row-gap: 4px;
+  align-items: center;
+  padding: 16px 6px 4px;
+}
+
+.home-video-copy span {
+  color: #62d7b1;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.home-video-copy h1,
+.home-video-copy p {
+  margin: 0;
+}
+
+.home-video-copy h1 {
+  margin-top: 0;
+  color: #f9fffc;
+  font-size: clamp(20px, 2.4vw, 28px);
+  line-height: 1.12;
+}
+
+.home-video-copy p {
+  grid-column: 2;
+  color: rgba(249, 255, 252, 0.68);
+  line-height: 1.6;
+}
+
 .coming-soon-panel {
   width: min(100%, 520px);
   padding: 30px;
@@ -326,6 +380,11 @@ button {
   padding-top: clamp(24px, 4vw, 42px);
 }
 
+.templates-shell {
+  max-width: min(100%, 1480px);
+  padding-top: clamp(24px, 4vw, 42px);
+}
+
 .templates-head,
 .tools-head {
   max-width: 680px;
@@ -377,11 +436,17 @@ button {
 }
 
 .template-library {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: 1fr;
+  height: 100%;
 }
 
 .template-library article {
-  min-height: 190px;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.template-library article[hidden] {
+  display: none;
 }
 
 .template-library span {
@@ -393,6 +458,61 @@ button {
 .template-library h2 {
   margin-top: 16px;
   font-size: 22px;
+}
+
+.template-copy-card {
+  grid-column: 1 / -1;
+  height: 100%;
+}
+
+.templates-page .template-library .template-copy-card {
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+}
+
+.template-copy-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.template-copy-head h2 {
+  margin-top: 0;
+}
+
+.template-copy-card textarea {
+  width: 100%;
+  height: calc(100% - 62px);
+  margin-top: 12px;
+  border: 1px solid rgba(98, 215, 177, 0.16);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(249, 255, 252, 0.82);
+  font: inherit;
+  line-height: 1.6;
+  overflow: auto;
+  padding: 16px;
+  resize: none;
+}
+
+.template-workspace .tool-panel {
+  height: var(--tool-panel-height);
+  min-height: 0;
+  overflow: hidden;
+}
+
+.template-panel .tool-panel-head h1 {
+  margin: 6px 0 0;
+  color: #f9fffc;
+  font-size: clamp(24px, 3.4vw, 34px);
+  line-height: 1.1;
+}
+
+.template-menu .tool-option {
+  text-decoration: none;
 }
 
 .tools-workspace {
@@ -1347,6 +1467,7 @@ html[data-theme="light"] .site-nav-link[aria-current="page"],
 html[data-theme="light"] .home-brand,
 html[data-theme="light"] .coming-soon-panel h1,
 html[data-theme="light"] .templates-head h1,
+html[data-theme="light"] .template-panel .tool-panel-head h1,
 html[data-theme="light"] .templates-page .template-library h2,
 html[data-theme="light"] .tools-head h1,
 html[data-theme="light"] .study-hub-page .topbar h2,
@@ -1385,6 +1506,7 @@ html[data-theme="light"] .study-hub-page textarea::placeholder {
 }
 
 html[data-theme="light"] .coming-soon-panel,
+html[data-theme="light"] .home-video-panel,
 html[data-theme="light"] .templates-page .template-library article,
 html[data-theme="light"] .tools-menu,
 html[data-theme="light"] .tool-panel,
@@ -1401,10 +1523,23 @@ html[data-theme="light"] .study-hub-page .empty-state {
   box-shadow: var(--shadow);
 }
 
+html[data-theme="light"] .home-video-copy {
+  background: transparent;
+}
+
+html[data-theme="light"] .home-video-copy h1 {
+  color: #17211d;
+}
+
+html[data-theme="light"] .home-video-copy p {
+  color: #65746d;
+}
+
 html[data-theme="light"] .theme-toggle,
 html[data-theme="light"] .tool-form textarea,
 html[data-theme="light"] .tool-form input,
 html[data-theme="light"] .tool-form select,
+html[data-theme="light"] .template-copy-card textarea,
 html[data-theme="light"] .study-hub-page .nav button,
 html[data-theme="light"] .study-hub-page .segmented,
 html[data-theme="light"] .study-hub-page .secondary-btn,
