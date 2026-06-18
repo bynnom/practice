@@ -9,6 +9,8 @@ Web local cho QA workspace, gồm trang home, QA Templates và Study Hub để �
 ├── index.html
 ├── qa-templates
 │   └── index.html
+├── it-tools
+│   └── index.html
 ├── study-hub
 │   └── index.html
 ├── assets
@@ -17,9 +19,16 @@ Web local cho QA workspace, gồm trang home, QA Templates và Study Hub để �
 │   ├── images
 │   │   └── logo.png
 │   ├── scripts
-│   │   └── app.js
-│   └── styles
-│       └── main.css
+│   │   ├── app.js
+│   │   ├── auth.js
+│   │   ├── back-to-top.js
+│   │   ├── templates.js
+│   │   ├── text-generator.js
+│   │   └── theme.js
+│   ├── styles
+│   │   └── main.css
+│   └── videos
+│       └── homepage.mp4
 └── README.md
 ```
 
@@ -39,6 +48,7 @@ Các trang chính:
 
 - Home: `http://localhost:5173/`
 - QA Templates: `http://localhost:5173/qa-templates/`
+- IT Tools: `http://localhost:5173/it-tools/`
 - Study Hub: `http://localhost:5173/study-hub/`
 
 Study Hub yêu cầu đăng nhập từ home trước khi truy cập.
@@ -46,6 +56,8 @@ Study Hub yêu cầu đăng nhập từ home trước khi truy cập.
 ## Tính năng
 
 - Xem kiến thức theo nhóm: HR, API, Automation, Scrum, SQL, Mobile/App...
+- QA Templates có mẫu Release Confirmation để copy nhanh.
+- IT Tools có Text Generator và Text Diff.
 - Tìm kiếm không dấu.
 - Đánh dấu từng mục là `Cần ôn` hoặc `Đã tự tin`.
 - Flashcard để luyện nhớ nhanh.
